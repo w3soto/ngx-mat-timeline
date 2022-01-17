@@ -1,0 +1,43 @@
+
+
+<div class="ngx-mat-timeline-item-timeline">
+
+  <ng-container
+    *ngTemplateOutlet="customIconTpl ? customIconTpl : iconTpl"
+  ></ng-container>
+
+  <ng-template #iconTpl>
+    <mat-icon
+      *ngIf="icon; else svgIconTpl"
+      class="ngx-mat-timeline-item-icon">{{ icon }}</mat-icon>
+  </ng-template>
+
+  <ng-template #svgIconTpl>
+    <mat-icon
+      *ngIf="svgIcon; else iconUrlTpl"
+      [svgIcon]="$any(svgIcon)"
+      class="ngx-mat-timeline-item-icon"></mat-icon>
+  </ng-template>
+
+  <ng-template #iconUrlTpl>
+    <img
+      *ngIf="iconUrl"
+      [src]="iconUrl"
+      class="ngx-mat-timeline-item-icon"/>
+  </ng-template>
+
+  <ng-container
+    *ngTemplateOutlet="customLabelTpl ? customLabelTpl : labelTpl"
+  ></ng-container>
+
+  <ng-template #labelTpl>
+    <div *ngIf="label" class="mat-caption ngx-mat-timeline-item-label">{{ label }}</div>
+  </ng-template>
+
+  <div class="ngx-mat-timeline-item-line"></div>
+
+</div>
+
+<div class="ngx-mat-timeline-item-content">
+  <ng-content></ng-content>
+</div>

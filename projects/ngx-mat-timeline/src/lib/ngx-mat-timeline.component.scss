@@ -1,0 +1,26 @@
+.ngx-mat-timeline {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+
+  overflow: auto;
+}
+
+.ngx-mat-timeline--start {
+  // default
+}
+
+.ngx-mat-timeline--end {
+  > .ngx-mat-timeline-item {
+    flex-flow: row-reverse;
+    .ngx-mat-timeline-item-content {
+      text-align: right;
+    }
+  }
+}
+
+

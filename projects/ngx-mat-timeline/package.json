@@ -1,0 +1,12 @@
+{
+  "name": "ngx-mat-timeline",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": ">=10.0.0",
+    "@angular/core": ">=10.0.0",
+    "@angular/material": ">=10.0.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  }
+}

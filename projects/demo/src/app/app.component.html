@@ -1,0 +1,74 @@
+<div style="display: flex; align-items: center; justify-content: flex-start; gap: 24px;">
+
+  Timeline Position:
+  <mat-radio-group class="radios" [(ngModel)]="position">
+    <mat-radio-button value="start">Start</mat-radio-button>
+    <mat-radio-button value="end">End</mat-radio-button>
+  </mat-radio-group>
+
+</div>
+
+
+<div style="display: flex; align-items: center; justify-content: flex-start; gap: 24px;">
+
+  Timeline Orientation:
+  <mat-radio-group class="radios" [(ngModel)]="orientation">
+    <mat-radio-button value="vertical">Vertical</mat-radio-button>
+    <mat-radio-button value="horizontal">Horizontal</mat-radio-button>
+  </mat-radio-group>
+
+</div>
+
+<mat-card class="mat-elevation-z5">
+
+  <mat-card-title>Basic example</mat-card-title>
+
+  <mat-card-content>
+
+    <ngx-mat-timeline [position]="position" [orientation]="orientation">
+
+      <ngx-mat-timeline-item
+        *ngFor="let item of items; let idx = index"
+        [icon]="item.icon"
+        [svgIcon]="item.svgIcon"
+        [iconUrl]="item.iconUrl"
+        [label]="item.label">
+
+        {{ item.content }}
+
+      </ngx-mat-timeline-item>
+
+    </ngx-mat-timeline>
+
+  </mat-card-content>
+
+</mat-card>
+
+<mat-card class="mat-elevation-z5">
+
+  <mat-card-title>Custom icons and labels</mat-card-title>
+
+  <mat-card-content>
+
+    <ngx-mat-timeline [position]="position"  [orientation]="orientation">
+
+      <ngx-mat-timeline-item
+        *ngFor="let item of items; let idx = index">
+
+        {{ item.content }}
+
+        <ng-template ngxMatTimelineItemIcon>
+          <div class="custom-icon mat-elevation-z2">{{ idx + 1 }}</div>
+        </ng-template>
+
+        <ng-template ngxMatTimelineItemLabel>
+          <div class="custom-label mat-elevation-z2">{{ item.label }}</div>
+        </ng-template>
+
+      </ngx-mat-timeline-item>
+
+    </ngx-mat-timeline>
+
+  </mat-card-content>
+
+</mat-card>

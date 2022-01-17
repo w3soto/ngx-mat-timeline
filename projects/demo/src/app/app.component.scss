@@ -1,0 +1,42 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 40px;
+  max-width: 800px;
+}
+
+.radios {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.ngx-mat-timeline-item {
+  min-width: 200px;
+}
+
+.custom-icon {
+  min-width: 32px;
+  min-height: 32px;
+  max-width: 32px;
+  max-height: 32px;
+  border-radius: 50%;
+  background-color: #3F51B5;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  line-height: 0;
+}
+
+.custom-label {
+  background-color: #fff;
+  display: block;
+  box-sizing: border-box;
+  text-align: center;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+}

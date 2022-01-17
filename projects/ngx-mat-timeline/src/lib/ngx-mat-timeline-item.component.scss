@@ -1,0 +1,119 @@
+
+$item-gap: 24px;
+$item-timeline-width: 48px;
+$item-timeline-gap: 8px;
+$item-timeline-icon-size: 24px;
+
+.ngx-mat-timeline-item {
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: $item-gap;
+
+  //overflow: hidden;
+
+  &:not(first-child) {
+    margin-top: $item-timeline-gap;
+  }
+
+  &:last-child {
+    .ngx-mat-timeline-item-line {
+      display: none;
+    }
+    .ngx-mat-timeline-item-content {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.ngx-mat-timeline-item-timeline {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: center;
+  gap: $item-timeline-gap;
+
+  min-width: $item-timeline-width;
+  max-width: $item-timeline-width;
+}
+
+img.ngx-mat-timeline-item-icon {
+  margin: 0;
+  padding: 0;
+  width: $item-timeline-icon-size;
+  height: $item-timeline-icon-size;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.ngx-mat-timeline-item-label {
+  text-align: center;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ngx-mat-timeline-item-line {
+  flex: 1;
+  width: 1px;
+  height: auto;
+  background-color: #0000001f;
+}
+
+.ngx-mat-timeline-item-content {
+  margin-bottom: $item-timeline-width;
+}
+
+
+// END position
+.ngx-mat-timeline--end {
+  .ngx-mat-timeline-item {
+    flex-flow: row-reverse;
+  }
+  .ngx-mat-timeline-item-content {
+    text-align: right;
+  }
+}
+
+// HORIZONTAL orienatation
+.ngx-mat-timeline--horizontal {
+  flex-direction: row;
+  .ngx-mat-timeline-item {
+    flex-direction: column;
+
+    &:not(first-child) {
+      margin-top: 0;
+      margin-right: $item-timeline-gap;
+    }
+  }
+  .ngx-mat-timeline-item-timeline {
+    flex-direction: row;
+    min-width: unset;
+    max-width: unset;
+    min-height: $item-timeline-width;
+    max-height: $item-timeline-width;
+  }
+  .ngx-mat-timeline-item-label {
+    width: auto;
+  }
+  .ngx-mat-timeline-item-line {
+    width: 100%;
+    height: 1px;
+  }
+  .ngx-mat-timeline-item-content {
+    margin-bottom: 0;
+    margin-right: $item-timeline-width;
+  }
+}
+
+
+.ngx-mat-timeline--end.ngx-mat-timeline--horizontal {
+  .ngx-mat-timeline-item {
+    flex-direction: column-reverse;
+  }
+  .ngx-mat-timeline-item-content {
+    text-align: left;
+  }
+}
