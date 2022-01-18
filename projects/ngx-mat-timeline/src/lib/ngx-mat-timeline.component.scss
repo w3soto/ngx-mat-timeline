@@ -3,7 +3,6 @@
   padding: 0;
   width: 100%;
   display: flex;
-  overflow: auto;
 
   &--vertical {
     flex-direction: column;
@@ -15,6 +14,7 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: stretch;
+    overflow: auto;
   }
 
 }
