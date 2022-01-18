@@ -24,7 +24,7 @@ export class AppComponent {
     {
       svgIcon: 'airballoon', // from mdi icons
       label: 'Ipsum',
-      content: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don\'t look even slightly believable.'
+      content: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don\'t look even slightly believable. '
     },
     {
       iconUrl : 'https://cdn-icons-png.flaticon.com/512/147/147144.png',

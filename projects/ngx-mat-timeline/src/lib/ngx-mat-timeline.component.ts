@@ -13,10 +13,10 @@ import { ChangeDetectionStrategy, Component, HostBinding, Input, OnInit, ViewEnc
 export class NgxMatTimelineComponent implements OnInit {
 
   @Input()
-  set position(position: 'start' | 'end') {
+  set position(position: 'start' | 'end' | 'center') {
     this._position = position;
   }
-  private _position: 'start' | 'end' = 'start';
+  private _position: 'start' | 'end' | 'center' = 'start';
 
   @Input()
   set orientation(orientation: 'vertical' | 'horizontal') {
@@ -32,6 +32,11 @@ export class NgxMatTimelineComponent implements OnInit {
   @HostBinding('class.ngx-mat-timeline--end')
   get isEndPosition(): boolean {
     return this._position == 'end';
+  }
+
+  @HostBinding('class.ngx-mat-timeline--center')
+  get isCenterPosition(): boolean {
+    return this._position == 'center';
   }
 
   @HostBinding('class.ngx-mat-timeline--vertical')
