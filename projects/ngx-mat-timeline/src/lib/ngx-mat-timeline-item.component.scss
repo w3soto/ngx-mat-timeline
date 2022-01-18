@@ -67,6 +67,10 @@ $item-timeline-content-size: 5*$item-timeline-box-size;
   align-items: stretch;
   &:not(:last-child) {
     margin-bottom: $item-timeline-box-gap;
+    .ngx-mat-timeline-item-content,
+    .ngx-mat-timeline-item-content-fill {
+      margin-bottom: $item-timeline-box-size;
+    }
   }
   .ngx-mat-timeline-item-timeline {
     min-width: $item-timeline-box-size;
@@ -83,9 +87,6 @@ $item-timeline-content-size: 5*$item-timeline-box-size;
     width: $item-timeline-line-thickness;
     height: auto;
     min-height: $item-timeline-box-gap;
-  }
-  .ngx-mat-timeline-item-content {
-    margin-bottom: $item-timeline-box-size;
   }
 }
 
@@ -139,6 +140,10 @@ $item-timeline-content-size: 5*$item-timeline-box-size;
 
   &:not(:last-child) {
     margin-right: $item-timeline-box-gap;
+    .ngx-mat-timeline-item-content,
+    .ngx-mat-timeline-item-content-fill {
+      margin-right: $item-timeline-box-size;
+    }
   }
   .ngx-mat-timeline-item-timeline {
     min-height: $item-timeline-box-size;
@@ -158,7 +163,6 @@ $item-timeline-content-size: 5*$item-timeline-box-size;
   }
   .ngx-mat-timeline-item-content,
   .ngx-mat-timeline-item-content-fill {
-    margin-right: $item-timeline-box-size;
     min-height: $item-timeline-content-size;
     max-height: $item-timeline-content-size;
   }
