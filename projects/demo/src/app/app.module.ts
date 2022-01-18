@@ -11,6 +11,7 @@ import { MatButtonToggleModule } from "@angular/material/button-toggle";
 import { MatRadioModule } from "@angular/material/radio";
 import { FormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
+import { MatExpansionModule } from "@angular/material/expansion";
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { HttpClientModule } from "@angular/common/http";
     MatButtonModule,
     MatButtonToggleModule,
     MatRadioModule,
+    MatExpansionModule,
     MatCardModule,
     MatIconModule,
 

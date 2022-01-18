@@ -47,23 +47,28 @@
 
 <mat-card class="mat-elevation-z5">
 
-  <mat-card-title>Custom icons and labels</mat-card-title>
+  <mat-card-title>Custom icons, labels and content</mat-card-title>
 
   <mat-card-content>
 
-    <ngx-mat-timeline [position]="position"  [orientation]="orientation">
+    <ngx-mat-timeline
+      class="custom-timeline"
+      [position]="position"
+      [orientation]="orientation">
 
       <ngx-mat-timeline-item
         *ngFor="let item of items; let idx = index">
 
-        {{ item.content }}
+        <div class="custom-content">
+          {{ item.content }}
+        </div>
 
         <ng-template ngxMatTimelineItemIcon>
-          <div class="custom-icon mat-elevation-z2">{{ idx + 1 }}</div>
+          <div class="custom-icon">{{ idx + 1 }}</div>
         </ng-template>
 
         <ng-template ngxMatTimelineItemLabel>
-          <div class="custom-label mat-elevation-z2">{{ item.label }}</div>
+          <div class="custom-label">{{ item.label }}</div>
         </ng-template>
 
       </ngx-mat-timeline-item>

@@ -3,7 +3,7 @@
   flex-direction: column;
   gap: 40px;
   padding: 40px;
-  max-width: 800px;
+  max-width: 1200px;
 }
 
 .radios {
@@ -12,8 +12,141 @@
   align-items: center;
 }
 
-.ngx-mat-timeline-item {
-  min-width: 200px;
+.mat-card-title {
+  margin-bottom: 24px;
+}
+
+.custom-timeline {
+  ::ng-deep .custom-content {
+    border: solid 3px silver;
+    box-shadow: none;
+  }
+  ::ng-deep .ngx-mat-timeline-item-line {
+    background-color: silver;
+  }
+  ::ng-deep .ngx-mat-timeline-item-content {
+    position: relative;
+  }
+}
+
+.custom-timeline.ngx-mat-timeline--vertical .ngx-mat-timeline-item {
+  ::ng-deep .custom-content {
+    max-width: 350px;
+    transform: translateY(-8px);
+  }
+  ::ng-deep .ngx-mat-timeline-item-line {
+    width: 3px;
+  }
+  ::ng-deep .ngx-mat-timeline-item-content {
+    &:before {
+      content: " ";
+      display: block;
+      height: 3px;
+      width: 24px;
+      background-color: silver;
+      position: absolute;
+      top: 15px;
+    }
+  }
+}
+
+.custom-timeline.ngx-mat-timeline--vertical.ngx-mat-timeline--start .ngx-mat-timeline-item {
+  ::ng-deep .ngx-mat-timeline-item-content {
+    &:before {
+      left: -24px;
+    }
+  }
+}
+
+.custom-timeline.ngx-mat-timeline--vertical.ngx-mat-timeline--center .ngx-mat-timeline-item {
+  &:nth-child(2n) {
+    ::ng-deep .ngx-mat-timeline-item-content {
+      &:before {
+        left: initial;
+        right: -24px;
+      }
+    }
+  }
+  &:nth-child(2n+1) {
+    ::ng-deep .ngx-mat-timeline-item-content {
+      &:before {
+        left: -24px;
+      }
+    }
+  }
+}
+
+.custom-timeline.ngx-mat-timeline--vertical.ngx-mat-timeline--end .ngx-mat-timeline-item {
+  ::ng-deep .ngx-mat-timeline-item-content {
+    &:before {
+      right: -24px;
+    }
+  }
+}
+
+.custom-timeline.ngx-mat-timeline--horizontal {
+  padding: 40px 0;
+  .ngx-mat-timeline-item {
+    min-width: 400px !important;
+    ::ng-deep .ngx-mat-timeline-item-line {
+      height: 3px;
+    }
+    ::ng-deep .ngx-mat-timeline-item-timeline {
+      max-height: 32px !important;
+      min-height: 32px !important;
+    }
+    ::ng-deep .ngx-mat-timeline-item-content {
+      position: relative;
+      &:before {
+        content: " ";
+        display: block;
+        height: 15px;
+        width: 3px;
+        background-color: silver;
+        position: absolute;
+        left: 15px;
+      }
+    }
+  }
+}
+
+.custom-timeline.ngx-mat-timeline--horizontal.ngx-mat-timeline--start .ngx-mat-timeline-item {
+  ::ng-deep .ngx-mat-timeline-item-content {
+    &:before {
+      top: -15px;
+    }
+  }
+}
+
+.custom-timeline.ngx-mat-timeline--horizontal.ngx-mat-timeline--center .ngx-mat-timeline-item {
+  &:nth-child(2n) {
+    ::ng-deep .ngx-mat-timeline-item-content {
+      &:before {
+        bottom: -15px;
+      }
+    }
+  }
+  &:nth-child(2n+1) {
+    ::ng-deep .ngx-mat-timeline-item-content {
+      &:before {
+        top: -15px;
+      }
+    }
+  }
+}
+
+.custom-timeline.ngx-mat-timeline--horizontal.ngx-mat-timeline--end .ngx-mat-timeline-item {
+  ::ng-deep .ngx-mat-timeline-item-content {
+    &:before {
+      bottom: -15px;
+    }
+  }
+}
+
+.custom-content {
+  padding: 8px;
+  border: solid 3px silver;
+  border-radius: 4px;
 }
 
 .custom-icon {
@@ -32,11 +165,11 @@
 }
 
 .custom-label {
-  background-color: #fff;
   display: block;
   box-sizing: border-box;
   text-align: center;
   padding: 2px 8px;
   border-radius: 4px;
+  border: solid 3px silver;
   font-size: 12px;
 }
