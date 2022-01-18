@@ -98,6 +98,9 @@ $item-timeline-content-size: 5*$item-timeline-box-size;
   }
   .ngx-mat-timeline-item-content {
     text-align: left;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
   }
 }
 
@@ -107,12 +110,18 @@ $item-timeline-content-size: 5*$item-timeline-box-size;
     flex-direction: row;
     .ngx-mat-timeline-item-content {
       text-align: left;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
     }
   }
   &:nth-child(2n) {
     flex-direction: row-reverse;
     .ngx-mat-timeline-item-content {
       text-align: right;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-start;
     }
   }
 }
@@ -125,6 +134,9 @@ $item-timeline-content-size: 5*$item-timeline-box-size;
   }
   .ngx-mat-timeline-item-content {
     text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
   }
 }
 
