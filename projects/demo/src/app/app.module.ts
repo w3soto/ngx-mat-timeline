@@ -12,6 +12,9 @@ import { MatRadioModule } from "@angular/material/radio";
 import { FormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 import { MatExpansionModule } from "@angular/material/expansion";
+import { MatCheckboxModule } from "@angular/material/checkbox";
+import { MatDividerModule } from "@angular/material/divider";
+import { MatToolbarModule } from "@angular/material/toolbar";
 
 @NgModule({
   declarations: [
@@ -27,8 +30,11 @@ import { MatExpansionModule } from "@angular/material/expansion";
     MatButtonToggleModule,
     MatRadioModule,
     MatExpansionModule,
+    MatCheckboxModule,
     MatCardModule,
     MatIconModule,
+    MatDividerModule,
+    MatToolbarModule,
 
     NgxMatTimelineModule
   ],

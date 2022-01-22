@@ -64,7 +64,8 @@
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-              "projects/demo/src/styles.scss"
+              "projects/demo/src/styles.scss",
+              "projects/ngx-mat-timeline/src/lib/ngx-mat-timeline.theme.scss"
             ],
             "scripts": []
           },

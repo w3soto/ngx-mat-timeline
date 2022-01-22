@@ -3,18 +3,23 @@
   padding: 0;
   width: 100%;
   display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
 
   &--vertical {
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: stretch;
   }
 
   &--horizontal {
     flex-direction: row;
-    justify-content: flex-start;
-    align-items: stretch;
     overflow: auto;
   }
+}
 
+.ngx-mat-timeline--vertical.ngx-mat-timeline--reverse {
+  flex-direction: column-reverse;
+}
+
+.ngx-mat-timeline--horizontal.ngx-mat-timeline--reverse {
+  flex-direction: row-reverse;
 }

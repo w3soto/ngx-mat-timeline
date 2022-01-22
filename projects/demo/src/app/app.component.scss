@@ -2,13 +2,27 @@
   display: flex;
   flex-direction: column;
   gap: 40px;
-  padding: 40px;
-  max-width: 1200px;
+  //max-width: 1200px;
+}
+
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 24px;
+  mat-divider {
+    min-height: 24px;
+  }
+  padding: 24px 40px;
+  background-color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 
 .radios {
   display: flex;
-  gap: 24px;
+  gap: 16px;
   align-items: center;
 }
 
@@ -16,11 +30,14 @@
   margin-bottom: 24px;
 }
 
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 0px 40px 40px;
+}
+
 .custom-timeline {
-  ::ng-deep .custom-content {
-    border: solid 3px silver;
-    box-shadow: none;
-  }
   ::ng-deep .ngx-mat-timeline-item-line {
     background-color: silver;
   }
@@ -38,6 +55,7 @@
     width: 3px;
   }
   ::ng-deep .ngx-mat-timeline-item-content {
+    // connection line from content box
     &:before {
       content: " ";
       display: block;
@@ -61,6 +79,10 @@
 .custom-timeline.ngx-mat-timeline--vertical.ngx-mat-timeline--center .ngx-mat-timeline-item {
   &:nth-child(2n) {
     ::ng-deep .ngx-mat-timeline-item-content {
+      img {
+        float: right;
+        margin: 0 0 0 10px;
+      }
       &:before {
         left: initial;
         right: -24px;
@@ -69,6 +91,10 @@
   }
   &:nth-child(2n+1) {
     ::ng-deep .ngx-mat-timeline-item-content {
+      img {
+        float: left;
+        margin: 0 10px 0 0;
+      }
       &:before {
         left: -24px;
       }
@@ -76,8 +102,38 @@
   }
 }
 
+.custom-timeline.ngx-mat-timeline--vertical.ngx-mat-timeline--center-alt .ngx-mat-timeline-item {
+  &:nth-child(2n) {
+    ::ng-deep .ngx-mat-timeline-item-content {
+      img {
+        float: left;
+        margin: 0 10px 0 0;
+      }
+      &:before {
+        left: -24px;
+      }
+    }
+  }
+  &:nth-child(2n+1) {
+    ::ng-deep .ngx-mat-timeline-item-content {
+      img {
+        float: right;
+        margin: 0 0 0 10px;
+      }
+      &:before {
+        left: initial;
+        right: -24px;
+      }
+    }
+  }
+}
+
 .custom-timeline.ngx-mat-timeline--vertical.ngx-mat-timeline--end .ngx-mat-timeline-item {
   ::ng-deep .ngx-mat-timeline-item-content {
+    img {
+      float: right;
+      margin: 0 0 0 10px;
+    }
     &:before {
       right: -24px;
     }
@@ -135,6 +191,24 @@
   }
 }
 
+.custom-timeline.ngx-mat-timeline--horizontal.ngx-mat-timeline--center-alt .ngx-mat-timeline-item {
+  &:nth-child(2n+1) {
+    ::ng-deep .ngx-mat-timeline-item-content {
+      &:before {
+        top: initial;
+        bottom: -15px;
+      }
+    }
+  }
+  &:nth-child(2n) {
+    ::ng-deep .ngx-mat-timeline-item-content {
+      &:before {
+        top: -15px;
+      }
+    }
+  }
+}
+
 .custom-timeline.ngx-mat-timeline--horizontal.ngx-mat-timeline--end .ngx-mat-timeline-item {
   ::ng-deep .ngx-mat-timeline-item-content {
     &:before {
@@ -147,6 +221,12 @@
   padding: 8px;
   border: solid 3px silver;
   border-radius: 4px;
+  img {
+    width: 82px;
+    vertical-align: top;
+    float: left;
+    margin-right: 10px;
+  }
 }
 
 .custom-icon {

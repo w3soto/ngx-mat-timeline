@@ -1,4 +1,17 @@
-import { ChangeDetectionStrategy, Component, HostBinding, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  HostBinding,
+  Input,
+  ViewEncapsulation
+} from '@angular/core';
+
+
+export type NGX_MAT_TIMELINE_POSITION = 'start' | 'end' | 'center' | 'center-alt';
+
+
+export type NGX_MAT_TIMELINE_ORIENTATION = 'vertical' | 'horizontal';
+
 
 @Component({
   selector: 'ngx-mat-timeline',
@@ -10,19 +23,28 @@ import { ChangeDetectionStrategy, Component, HostBinding, Input, OnInit, ViewEnc
     'class': 'ngx-mat-timeline'
   }
 })
-export class NgxMatTimelineComponent implements OnInit {
+export class NgxMatTimelineComponent {
+
+  private _position: NGX_MAT_TIMELINE_POSITION = 'start';
 
   @Input()
-  set position(position: 'start' | 'end' | 'center') {
+  set position(position: NGX_MAT_TIMELINE_POSITION) {
     this._position = position;
   }
-  private _position: 'start' | 'end' | 'center' = 'start';
+
+  private _orientation: NGX_MAT_TIMELINE_ORIENTATION = 'vertical';
 
   @Input()
-  set orientation(orientation: 'vertical' | 'horizontal') {
+  set orientation(orientation: NGX_MAT_TIMELINE_ORIENTATION) {
     this._orientation = orientation;
   }
-  private _orientation: 'vertical' | 'horizontal' = 'vertical';
+
+  _reverse: boolean = false;
+
+  @Input()
+  set reverse(reverse: boolean) {
+    this._reverse = reverse;
+  }
 
   @HostBinding('class.ngx-mat-timeline--start')
   get isStartPosition(): boolean {
@@ -39,6 +61,11 @@ export class NgxMatTimelineComponent implements OnInit {
     return this._position == 'center';
   }
 
+  @HostBinding('class.ngx-mat-timeline--center-alt')
+  get isCenterAltPosition(): boolean {
+    return this._position == 'center-alt';
+  }
+
   @HostBinding('class.ngx-mat-timeline--vertical')
   get isVerticalOrientation(): boolean {
     return this._orientation == 'vertical';
@@ -49,9 +76,9 @@ export class NgxMatTimelineComponent implements OnInit {
     return this._orientation == 'horizontal';
   }
 
-  constructor() { }
-
-  ngOnInit(): void {
+  @HostBinding('class.ngx-mat-timeline--reverse')
+  get isReverse(): boolean {
+    return this._reverse;
   }
 
 }
