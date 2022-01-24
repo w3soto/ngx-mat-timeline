@@ -5,6 +5,7 @@
   display: flex;
   justify-content: flex-start;
   align-items: stretch;
+  overflow: auto;
 
   &--vertical {
     flex-direction: column;
@@ -12,7 +13,11 @@
 
   &--horizontal {
     flex-direction: row;
-    overflow: auto;
+  }
+
+  &--center,
+  &--center-alt {
+    align-items: center;
   }
 }
 

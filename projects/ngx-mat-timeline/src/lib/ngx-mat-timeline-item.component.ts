@@ -86,7 +86,9 @@ export class NgxMatTimelineItemComponent implements OnInit, OnDestroy {
     if (this._timeline.isCenterPosition || this._timeline.isCenterAltPosition) {
       if (this._timeline.isHorizontalOrientation) {
         this._fillEl.nativeElement.style.minHeight = this._contentEl.nativeElement.offsetHeight + 'px';
+        this._fillEl.nativeElement.style.minWidth = 'unset';
       } else {
+        this._fillEl.nativeElement.style.minWidth = this._contentEl.nativeElement.offsetWidth + 'px';
         this._fillEl.nativeElement.style.minHeight = 'unset';
       }
     }
