@@ -142,6 +142,10 @@ $item-timeline-line-color: #0000001f;
       align-items: flex-start;
     }
   }
+  .ngx-mat-timeline-item-content,
+  .ngx-mat-timeline-item-fill {
+    min-width: 2*$item-timeline-box-size;
+  }
 }
 
 // VERTICAL + CENTER-ALT
@@ -163,6 +167,10 @@ $item-timeline-line-color: #0000001f;
       justify-content: flex-end;
       align-items: flex-start;
     }
+  }
+  .ngx-mat-timeline-item-content,
+  .ngx-mat-timeline-item-fill {
+    min-width: 2*$item-timeline-box-size;
   }
 }
 

@@ -1,31 +1,31 @@
 import { NgModule } from '@angular/core';
-import { NgxMatTimelineComponent } from './ngx-mat-timeline.component';
-import {
-  NgxMatTimelineItemComponent,
-  NgxMatTimelineItemIconDirective,
-  NgxMatTimelineItemLabelDirective
-} from './ngx-mat-timeline-item.component';
 import { MatIconModule } from "@angular/material/icon";
 import { BrowserModule } from "@angular/platform-browser";
 
+import { NgxMatTimeline } from './ngx-mat-timeline.component';
+import {
+  NgxMatTimelineItem,
+  NgxMatTimelineItemIcon,
+  NgxMatTimelineItemLabel
+} from './ngx-mat-timeline-item.component';
 
 
 @NgModule({
   declarations: [
-    NgxMatTimelineComponent,
-    NgxMatTimelineItemComponent,
-    NgxMatTimelineItemIconDirective,
-    NgxMatTimelineItemLabelDirective,
+    NgxMatTimeline,
+    NgxMatTimelineItem,
+    NgxMatTimelineItemIcon,
+    NgxMatTimelineItemLabel,
   ],
   imports: [
     BrowserModule,
     MatIconModule
   ],
   exports: [
-    NgxMatTimelineComponent,
-    NgxMatTimelineItemComponent,
-    NgxMatTimelineItemIconDirective,
-    NgxMatTimelineItemLabelDirective,
+    NgxMatTimeline,
+    NgxMatTimelineItem,
+    NgxMatTimelineItemIcon,
+    NgxMatTimelineItemLabel,
   ]
 })
 export class NgxMatTimelineModule { }

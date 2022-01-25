@@ -5,26 +5,23 @@ import {
   Directive,
   ElementRef,
   Input,
-  OnDestroy,
-  OnInit,
   TemplateRef,
   ViewChild,
   ViewEncapsulation
 } from '@angular/core';
-import { NgxMatTimelineComponent } from "./ngx-mat-timeline.component";
 
 
 @Directive({
   selector: 'ngx-mat-timeline-item-icon, [ngxMatTimelineItemIcon]',
 })
-export class NgxMatTimelineItemIconDirective {
+export class NgxMatTimelineItemIcon {
 }
 
 
 @Directive({
   selector: 'ngx-mat-timeline-item-label, [ngxMatTimelineItemLabel]',
 })
-export class NgxMatTimelineItemLabelDirective {
+export class NgxMatTimelineItemLabel {
 }
 
 
@@ -38,7 +35,7 @@ export class NgxMatTimelineItemLabelDirective {
     'class': 'ngx-mat-timeline-item'
   }
 })
-export class NgxMatTimelineItemComponent implements OnInit, OnDestroy {
+export class NgxMatTimelineItem {
 
   @Input()
   label?: string | null;
@@ -52,10 +49,10 @@ export class NgxMatTimelineItemComponent implements OnInit, OnDestroy {
   @Input()
   iconUrl?: string | null;
 
-  @ContentChild(NgxMatTimelineItemIconDirective, {read: TemplateRef})
+  @ContentChild(NgxMatTimelineItemIcon, {read: TemplateRef})
   customIconTpl?: TemplateRef<any>;
 
-  @ContentChild(NgxMatTimelineItemLabelDirective, {read: TemplateRef})
+  @ContentChild(NgxMatTimelineItemLabel, {read: TemplateRef})
   customLabelTpl?: TemplateRef<any>;
 
   @ViewChild('contentEl', {static: true})
@@ -64,34 +61,17 @@ export class NgxMatTimelineItemComponent implements OnInit, OnDestroy {
   @ViewChild('fillEl', {static: true})
   private _fillEl!: ElementRef;
 
-  private _resizeObserver!: ResizeObserver;
-
-  constructor(
-    private _host: ElementRef,
-    private _timeline: NgxMatTimelineComponent
-  ) {
+  constructor() {
   }
 
-  ngOnInit(): void {
-    this._resizeObserver = new ResizeObserver(this._updateLayout.bind(this));
-    this._resizeObserver.observe(this._host.nativeElement);
+  _updateVerticalCenteredLayout() {
+    this._fillEl.nativeElement.style.minWidth = this._contentEl.nativeElement.offsetWidth + 'px';
+    this._fillEl.nativeElement.style.minHeight = 'unset';
   }
 
-  ngOnDestroy() {
-    this._resizeObserver.unobserve(this._host.nativeElement);
-    this._resizeObserver.disconnect();
-  }
-
-  private _updateLayout() {
-    if (this._timeline.isCenterPosition || this._timeline.isCenterAltPosition) {
-      if (this._timeline.isHorizontalOrientation) {
-        this._fillEl.nativeElement.style.minHeight = this._contentEl.nativeElement.offsetHeight + 'px';
-        this._fillEl.nativeElement.style.minWidth = 'unset';
-      } else {
-        this._fillEl.nativeElement.style.minWidth = this._contentEl.nativeElement.offsetWidth + 'px';
-        this._fillEl.nativeElement.style.minHeight = 'unset';
-      }
-    }
+  _updateHorizontalCenteredLayout() {
+    this._fillEl.nativeElement.style.minHeight = this._contentEl.nativeElement.offsetHeight + 'px';
+    this._fillEl.nativeElement.style.minWidth = 'unset'
   }
 
 }

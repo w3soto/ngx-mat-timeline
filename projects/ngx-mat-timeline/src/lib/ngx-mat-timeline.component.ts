@@ -1,10 +1,18 @@
 import {
   ChangeDetectionStrategy,
   Component,
+  ContentChildren,
+  ElementRef,
   HostBinding,
   Input,
+  OnDestroy,
+  OnInit,
+  QueryList,
   ViewEncapsulation
 } from '@angular/core';
+import { NgxMatTimelineItem } from "./ngx-mat-timeline-item.component";
+import { Observable, Subject } from "rxjs";
+import { takeUntil, tap, throttleTime } from "rxjs/operators";
 
 
 export type NGX_MAT_TIMELINE_POSITION = 'start' | 'end' | 'center' | 'center-alt';
@@ -23,13 +31,23 @@ export type NGX_MAT_TIMELINE_ORIENTATION = 'vertical' | 'horizontal';
     'class': 'ngx-mat-timeline'
   }
 })
-export class NgxMatTimelineComponent {
+export class NgxMatTimeline implements OnInit, OnDestroy {
+
+  @ContentChildren(NgxMatTimelineItem)
+  items: QueryList<NgxMatTimelineItem> = new QueryList();
+  private _destroyed: Subject<void> = new Subject();
+
+  constructor(
+    private _host: ElementRef
+  ) {
+  }
 
   private _position: NGX_MAT_TIMELINE_POSITION = 'start';
 
   @Input()
   set position(position: NGX_MAT_TIMELINE_POSITION) {
     this._position = position;
+    this.updateLayout();
   }
 
   private _orientation: NGX_MAT_TIMELINE_ORIENTATION = 'vertical';
@@ -37,6 +55,7 @@ export class NgxMatTimelineComponent {
   @Input()
   set orientation(orientation: NGX_MAT_TIMELINE_ORIENTATION) {
     this._orientation = orientation;
+    this.updateLayout();
   }
 
   _reverse: boolean = false;
@@ -44,6 +63,7 @@ export class NgxMatTimelineComponent {
   @Input()
   set reverse(reverse: boolean) {
     this._reverse = reverse;
+    this.updateLayout();
   }
 
   @HostBinding('class.ngx-mat-timeline--start')
@@ -79,6 +99,39 @@ export class NgxMatTimelineComponent {
   @HostBinding('class.ngx-mat-timeline--reverse')
   get isReverse(): boolean {
     return this._reverse;
+  }
+
+  ngOnInit() {
+    new Observable(observer => {
+      const ro = new ResizeObserver(entries => observer.next(entries));
+      ro.observe(this._host.nativeElement);
+      // unsubscribe callback
+      return () => {
+        ro.unobserve(this._host.nativeElement);
+        ro.disconnect();
+      }
+    }).pipe(
+      throttleTime(20),
+      tap(() => this.updateLayout()),
+      takeUntil(this._destroyed)
+    ).subscribe();
+  }
+
+  ngOnDestroy() {
+    this._destroyed.next();
+    this._destroyed.complete();
+  }
+
+  updateLayout() {
+    if (this.isCenterPosition || this.isCenterAltPosition) {
+      this.items.forEach(item => {
+        if (this.isVerticalOrientation) {
+          item._updateVerticalCenteredLayout();
+        } else {
+          item._updateHorizontalCenteredLayout();
+        }
+      });
+    }
   }
 
 }
