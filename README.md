@@ -11,9 +11,9 @@ Timeline component for Angular Material
 * Left, Center and Right position
 * Reversed direction
 * Support for Google Material Icons (including SVG) and images
-* Custom icon and labels directives  
+* Custom icon and label directives  
 
-![Screenshot](readme/basic-example.png "Screenshot")
+![Screenshot](https://raw.githubusercontent.com/w3soto/ngx-mat-timeline/master/readme/basic-example.png "Screenshot")
 
 ## Installation
 ```shell
