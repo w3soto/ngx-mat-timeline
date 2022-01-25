@@ -1,27 +1,114 @@
 # NgxMatTimeline
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2.
+Timeline component for Angular Material
 
-## Development server
+[Stackblitz Demo](https://stackblitz.com/edit/angular-ivy-xzfky8)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+[Github](https://github.com/w3soto/ngx-mat-timeline)
 
-## Code scaffolding
+## Features
+* Vertical and Horizontal orientation
+* Left, Center and Right position
+* Reversed direction
+* Support for Google Material Icons (including SVG) and images
+* Custom icon and labels directives  
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+![Screenshot](readme/basic-example.png "Screenshot")
 
-## Build
+## Installation
+```shell
+npm -i ngx-mat-timeline
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Example
 
-## Running unit tests
+Fro more details see *projects/demo* application
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```typescript
+import { NgxMatTimelineModule } from "ngx-mat-timeline";
+...
 
-## Running end-to-end tests
+@NgModule({
+  imports: [
+    ...,
+    NgxMatTimelineModule,
+  ],
+  ...
+})
+class AppModule { ... }
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```
 
-## Further help
+Basic template 
+```html
+<ngx-mat-timeline 
+  position="center" 
+  orientation="horizontal">
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+  <ngx-mat-timeline-item
+    *ngFor="let item of timelineItems; let i = index;"
+    [icon]="item.icon"
+    [label]="item.label">
+
+    {{ item.content }}
+    
+  </ngx-mat-timeline-item>
+
+</ngx-mat-timeline>
+```
+
+Custom template 
+```html
+<ngx-mat-timeline 
+  position="center" 
+  orientation="horizontal">
+
+  <ngx-mat-timeline-item
+    *ngFor="let item of timelineItems; let i = index;">
+
+    <ng-template ngxMatTimelineItemIcon>
+      <div class="custom-icon">{{ idx + 1 }}</div>
+    </ng-template>
+
+    <ng-template ngxMatTimelineItemLabel>
+      <div class="custom-label">{{ item.label }}</div>
+    </ng-template>
+
+    <div class="custom-content">
+      <img [src]="'./assets/image' + (idx + 1) + '.jpg'"> 
+      {{ item.content }}
+    </div>
+    
+  </ngx-mat-timeline-item>
+
+</ngx-mat-timeline>
+```
+
+## Components configuration
+ 
+**ngx-mat-timeline**
+
+| @Input | Type | Available values | Default |
+| ----- | ---- | ---------------- | ------- |
+| **orientation** | string | vertical, horizontal | vertical |
+| **position** | string | start, center, center-alt, end | start |
+| **reverse** | boolean | | false |
+
+**ngx-mat-timeline-item**
+
+| @Input | Type | Available values | Default |
+| ----- | ---- | ---------------- | ------- |
+| **icon** | string | Standard MatIcon value |  |
+| **svgIcon** | string | Standard MatIcon value (svgIcon) |  |
+| **iconUrl** | string | Image url  |  |
+| **label** | string | Text |  |
+
+Note: If multiple icons are defined, only first one is displayed (*icon* or *svgIcon* or *iconUrl*).
+
+## Directives 
+
+Use with *ng-template*.
+
+**ngxMatTimelineItemIcon** or **ngx-mat-timeline-item-icon**
+
+**ngxMatTimelineItemLabel** or **ngx-mat-timeline-item-label**
