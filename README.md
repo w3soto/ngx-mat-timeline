@@ -46,7 +46,7 @@ Basic template
   orientation="horizontal">
 
   <ngx-mat-timeline-item
-    *ngFor="let item of timelineItems; let i = index;"
+    *ngFor="let item of timelineItems"
     [icon]="item.icon"
     [label]="item.label">
 
@@ -64,7 +64,7 @@ Custom template
   orientation="horizontal">
 
   <ngx-mat-timeline-item
-    *ngFor="let item of timelineItems; let i = index;">
+    *ngFor="let item of timelineItems; let idx = index;">
 
     <ng-template ngxMatTimelineItemIcon>
       <div class="custom-icon">{{ idx + 1 }}</div>

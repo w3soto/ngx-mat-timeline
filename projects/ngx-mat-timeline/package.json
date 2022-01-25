@@ -1,6 +1,8 @@
 {
   "name": "ngx-mat-timeline",
-  "version": "1.0.2",
+  "version": "1.0.3",
+  "license": "MIT",
+  "homepage": "https://github.com/w3soto/ngx-mat-timeline#readme",
   "peerDependencies": {
     "@angular/common": ">=10.0.0",
     "@angular/core": ">=10.0.0",
