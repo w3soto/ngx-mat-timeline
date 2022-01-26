@@ -2,9 +2,11 @@
 
 Timeline component for Angular Material
 
-[Stackblitz Demo](https://stackblitz.com/edit/angular-ivy-xzfky8)
+[StackBlitz Demo](https://stackblitz.com/edit/angular-ivy-xzfky8)
 
-[Github](https://github.com/w3soto/ngx-mat-timeline)
+[GitHub](https://github.com/w3soto/ngx-mat-timeline)
+
+[NPM](https://www.npmjs.com/package/ngx-mat-timeline)
 
 ## Features
 * Vertical and Horizontal orientation
@@ -84,9 +86,9 @@ Custom template
 </ngx-mat-timeline>
 ```
 
-## Components configuration
+## Components
  
-**ngx-mat-timeline**
+* **ngx-mat-timeline**
 
 | @Input | Type | Available values | Default |
 | ----- | ---- | ---------------- | ------- |
@@ -94,7 +96,7 @@ Custom template
 | **position** | string | start, center, center-alt, end | start |
 | **reverse** | boolean | | false |
 
-**ngx-mat-timeline-item**
+* **ngx-mat-timeline-item**
 
 | @Input | Type | Available values | Default |
 | ----- | ---- | ---------------- | ------- |
@@ -109,6 +111,6 @@ Note: If multiple icons are defined, only first one is displayed (*icon* or *svg
 
 Use with *ng-template*.
 
-**ngxMatTimelineItemIcon** or **ngx-mat-timeline-item-icon**
+* **ngxMatTimelineItemIcon** or **ngx-mat-timeline-item-icon**
 
-**ngxMatTimelineItemLabel** or **ngx-mat-timeline-item-label**
+* **ngxMatTimelineItemLabel** or **ngx-mat-timeline-item-label**
