@@ -1,90 +1,92 @@
-<div class="top-bar mat-elevation-z5" color="primary">
-
-  Position:
-  <mat-radio-group class="radios" [(ngModel)]="position">
-    <mat-radio-button value="start">Start</mat-radio-button>
-    <mat-radio-button value="center">Center</mat-radio-button>
-    <mat-radio-button value="center-alt">Center Alt</mat-radio-button>
-    <mat-radio-button value="end">End</mat-radio-button>
-  </mat-radio-group>
-
-  <mat-divider [vertical]="true"></mat-divider>
-
-  Orientation:
-  <mat-radio-group class="radios" [(ngModel)]="orientation">
-    <mat-radio-button value="vertical">Vertical</mat-radio-button>
-    <mat-radio-button value="horizontal">Horizontal</mat-radio-button>
-  </mat-radio-group>
-
-  <mat-divider [vertical]="true"></mat-divider>
-
-  Reversed:
-  <mat-checkbox [(ngModel)]="reverse">Reverse</mat-checkbox>
-
-</div >
-
-<div class="content">
-
-  <mat-card class="mat-elevation-z5">
-
-    <mat-card-title>Basic example</mat-card-title>
-
-    <mat-card-content>
-
-      <ngx-mat-timeline [position]="position" [orientation]="orientation" [reverse]="reverse">
-
-        <ngx-mat-timeline-item
-          *ngFor="let item of items; let idx = index"
-          [icon]="item.icon"
-          [svgIcon]="item.svgIcon"
-          [iconUrl]="item.iconUrl"
-          [label]="item.label">
-
-          <div style="min-width: 250px; max-width: 350px;">
-            {{ item.content }}
-          </div>
-
-        </ngx-mat-timeline-item>
-
-      </ngx-mat-timeline>
-
-    </mat-card-content>
-
-  </mat-card>
-
-  <mat-card class="mat-elevation-z5">
-
-    <mat-card-title>Custom icons, labels and content</mat-card-title>
-
-    <mat-card-content>
-
-      <ngx-mat-timeline
-        class="custom-timeline"
-        [position]="position"
-        [orientation]="orientation"
-        [reverse]="reverse">
-
-        <ngx-mat-timeline-item
-          *ngFor="let item of items; let idx = index">
-
-          <div class="custom-content">
-            <img [src]="'./assets/image' + (idx + 1) + '.jpg'"> {{ item.content }}
-          </div>
-
-          <ng-template ngxMatTimelineItemIcon>
-            <div class="custom-icon">{{ idx + 1 }}</div>
-          </ng-template>
-
-          <ng-template ngxMatTimelineItemLabel>
-            <div class="custom-label">{{ item.label }}</div>
-          </ng-template>
-
-        </ngx-mat-timeline-item>
-
-      </ngx-mat-timeline>
-
-    </mat-card-content>
-
-  </mat-card>
-
+<div class="config-panel mat-elevation-z5">
+  <div>
+    Position:
+    <mat-radio-group class="radios" [(ngModel)]="position">
+      <mat-radio-button value="start">Start</mat-radio-button>
+      <mat-radio-button value="center">Center</mat-radio-button>
+      <mat-radio-button value="center-alt">Center Alt</mat-radio-button>
+      <mat-radio-button value="end">End</mat-radio-button>
+    </mat-radio-group>
+  </div>
+  <div>
+    Orientation:
+    <mat-radio-group class="radios" [(ngModel)]="orientation">
+      <mat-radio-button value="vertical">Vertical</mat-radio-button>
+      <mat-radio-button value="horizontal">Horizontal</mat-radio-button>
+    </mat-radio-group>
+  </div>
+  <div>
+    Reversed:
+    <mat-checkbox [(ngModel)]="reverse">Reverse</mat-checkbox>
+  </div>
 </div>
+
+<div class="content-panel">
+  <mat-tab-group class="mat-elevation-z5" dynamicHeight>
+    <mat-tab label="Default Example">
+      <mat-card>
+        <mat-card-title>Default example</mat-card-title>
+        <mat-card-content>
+
+          <p class="notice">Without any content's min-width/max-width styles settings</p>
+
+          <ngx-mat-timeline [position]="position" [orientation]="orientation" [reverse]="reverse">
+
+            <ngx-mat-timeline-item
+              *ngFor="let item of items; let idx = index"
+              [icon]="item.icon"
+              [svgIcon]="item.svgIcon"
+              [iconUrl]="item.iconUrl"
+              [label]="item.label">
+
+              <div>
+                {{ item.content }}
+              </div>
+
+            </ngx-mat-timeline-item>
+
+          </ngx-mat-timeline>
+
+        </mat-card-content>
+      </mat-card>
+    </mat-tab>
+
+    <mat-tab label="Customized Example">
+      <mat-card>
+        <mat-card-title>Customized Example</mat-card-title>
+        <mat-card-content>
+
+          <p class="notice">With content's min-width: 250px and max-width: 350px styles settings</p>
+
+          <ngx-mat-timeline
+            class="custom-timeline"
+            [position]="position"
+            [orientation]="orientation"
+            [reverse]="reverse">
+
+            <ngx-mat-timeline-item
+              *ngFor="let item of items; let idx = index">
+
+              <div class="custom-content" style="min-width: 250px; max-width: 350px">
+                <img [src]="'./assets/image' + (idx + 1) + '.jpg'"> {{ item.content }}
+              </div>
+
+              <ng-template ngxMatTimelineItemIcon>
+                <div class="custom-icon">{{ idx + 1 }}</div>
+              </ng-template>
+
+              <ng-template ngxMatTimelineItemLabel>
+                <div class="custom-label">{{ item.label }}</div>
+              </ng-template>
+
+            </ngx-mat-timeline-item>
+
+          </ngx-mat-timeline>
+
+        </mat-card-content>
+      </mat-card>
+    </mat-tab>
+  </mat-tab-group>
+</div>
+
+

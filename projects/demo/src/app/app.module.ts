@@ -15,6 +15,7 @@ import { MatExpansionModule } from "@angular/material/expansion";
 import { MatCheckboxModule } from "@angular/material/checkbox";
 import { MatDividerModule } from "@angular/material/divider";
 import { MatToolbarModule } from "@angular/material/toolbar";
+import { MatTabsModule } from "@angular/material/tabs";
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { MatToolbarModule } from "@angular/material/toolbar";
     MatIconModule,
     MatDividerModule,
     MatToolbarModule,
+    MatTabsModule,
 
     NgxMatTimelineModule
   ],

@@ -5,19 +5,25 @@
   //max-width: 1200px;
 }
 
-.top-bar {
+.config-panel {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   justify-content: flex-start;
-  gap: 24px;
-  mat-divider {
-    min-height: 24px;
-  }
-  padding: 24px 40px;
+  gap: 16px;
+  padding: 24px;
   background-color: white;
   position: sticky;
   top: 0;
-  z-index: 1;
+  z-index: 999;
+  > div {
+    display: flex;
+    gap: 24px;
+  }
+}
+
+.content-panel {
+  padding: 0px 24px 24px;
 }
 
 .radios {
@@ -30,13 +36,16 @@
   margin-bottom: 24px;
 }
 
-.content {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  padding: 0px 40px 40px;
+.notice {
+  padding: 10px;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+  margin-bottom: 20px;
 }
 
+//
+// CUSTOM TIMELINE
+//
 .custom-timeline {
   ::ng-deep .ngx-mat-timeline-item-line {
     background-color: silver;
@@ -47,9 +56,6 @@
 }
 
 .custom-timeline.ngx-mat-timeline--vertical .ngx-mat-timeline-item {
-  ::ng-deep .custom-content {
-    max-width: 350px;
-  }
   ::ng-deep .ngx-mat-timeline-item-line {
     width: 3px;
   }
@@ -142,7 +148,6 @@
 .custom-timeline.ngx-mat-timeline--horizontal {
   padding: 40px 0;
   .ngx-mat-timeline-item {
-    min-width: 400px !important;
     ::ng-deep .ngx-mat-timeline-item-line {
       height: 3px;
     }
@@ -220,6 +225,7 @@
   padding: 8px;
   border: solid 3px silver;
   border-radius: 4px;
+  box-sizing: border-box;
   img {
     width: 82px;
     vertical-align: top;
