@@ -33,38 +33,26 @@ export type NGX_MAT_TIMELINE_ORIENTATION = 'vertical' | 'horizontal';
 })
 export class NgxMatTimeline implements OnInit, OnDestroy {
 
-  @ContentChildren(NgxMatTimelineItem)
-  items: QueryList<NgxMatTimelineItem> = new QueryList();
-  private _destroyed: Subject<void> = new Subject();
-
-  constructor(
-    private _host: ElementRef
-  ) {
-  }
-
-  private _position: NGX_MAT_TIMELINE_POSITION = 'start';
-
   @Input()
   set position(position: NGX_MAT_TIMELINE_POSITION) {
     this._position = position;
     this.updateLayout();
   }
-
-  private _orientation: NGX_MAT_TIMELINE_ORIENTATION = 'vertical';
+  private _position: NGX_MAT_TIMELINE_POSITION = 'start';
 
   @Input()
   set orientation(orientation: NGX_MAT_TIMELINE_ORIENTATION) {
     this._orientation = orientation;
     this.updateLayout();
   }
-
-  _reverse: boolean = false;
+  private _orientation: NGX_MAT_TIMELINE_ORIENTATION = 'vertical';
 
   @Input()
   set reverse(reverse: boolean) {
     this._reverse = reverse;
     this.updateLayout();
   }
+  _reverse: boolean = false;
 
   @HostBinding('class.ngx-mat-timeline--start')
   get isStartPosition(): boolean {
@@ -100,6 +88,15 @@ export class NgxMatTimeline implements OnInit, OnDestroy {
   get isReverse(): boolean {
     return this._reverse;
   }
+
+  @ContentChildren(NgxMatTimelineItem)
+  items: QueryList<NgxMatTimelineItem> = new QueryList();
+
+  private _destroyed: Subject<void> = new Subject();
+
+  constructor(
+    private _host: ElementRef
+  ) {}
 
   ngOnInit() {
     new Observable(observer => {
