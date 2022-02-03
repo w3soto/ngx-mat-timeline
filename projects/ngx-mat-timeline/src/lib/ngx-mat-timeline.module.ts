@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { MatIconModule } from "@angular/material/icon";
-import { BrowserModule } from "@angular/platform-browser";
 
 import { NgxMatTimeline } from './ngx-mat-timeline.component';
 import {
@@ -8,6 +7,7 @@ import {
   NgxMatTimelineItemIcon,
   NgxMatTimelineItemLabel
 } from './ngx-mat-timeline-item.component';
+import { CommonModule } from "@angular/common";
 
 
 @NgModule({
@@ -18,7 +18,7 @@ import {
     NgxMatTimelineItemLabel,
   ],
   imports: [
-    BrowserModule,
+    CommonModule,
     MatIconModule
   ],
   exports: [
