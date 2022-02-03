@@ -55,7 +55,7 @@
   }
 }
 
-.custom-timeline.ngx-mat-timeline--vertical .ngx-mat-timeline-item {
+.custom-timeline.ngx-mat-timeline-vertical .ngx-mat-timeline-item {
   ::ng-deep .ngx-mat-timeline-item-line {
     width: 3px;
   }
@@ -73,7 +73,7 @@
   }
 }
 
-.custom-timeline.ngx-mat-timeline--vertical.ngx-mat-timeline--start .ngx-mat-timeline-item {
+.custom-timeline.ngx-mat-timeline-vertical.ngx-mat-timeline-start .ngx-mat-timeline-item {
   ::ng-deep .ngx-mat-timeline-item-content {
     &:before {
       left: -24px;
@@ -81,7 +81,7 @@
   }
 }
 
-.custom-timeline.ngx-mat-timeline--vertical.ngx-mat-timeline--center .ngx-mat-timeline-item {
+.custom-timeline.ngx-mat-timeline-vertical.ngx-mat-timeline-center .ngx-mat-timeline-item {
   &:nth-child(2n) {
     ::ng-deep .ngx-mat-timeline-item-content {
       img {
@@ -107,7 +107,7 @@
   }
 }
 
-.custom-timeline.ngx-mat-timeline--vertical.ngx-mat-timeline--center-alt .ngx-mat-timeline-item {
+.custom-timeline.ngx-mat-timeline-vertical.ngx-mat-timeline-center-alt .ngx-mat-timeline-item {
   &:nth-child(2n) {
     ::ng-deep .ngx-mat-timeline-item-content {
       img {
@@ -133,7 +133,7 @@
   }
 }
 
-.custom-timeline.ngx-mat-timeline--vertical.ngx-mat-timeline--end .ngx-mat-timeline-item {
+.custom-timeline.ngx-mat-timeline-vertical.ngx-mat-timeline-end .ngx-mat-timeline-item {
   ::ng-deep .ngx-mat-timeline-item-content {
     img {
       float: right;
@@ -145,7 +145,7 @@
   }
 }
 
-.custom-timeline.ngx-mat-timeline--horizontal {
+.custom-timeline.ngx-mat-timeline-horizontal {
   padding: 40px 0;
   .ngx-mat-timeline-item {
     ::ng-deep .ngx-mat-timeline-item-line {
@@ -170,7 +170,7 @@
   }
 }
 
-.custom-timeline.ngx-mat-timeline--horizontal.ngx-mat-timeline--start .ngx-mat-timeline-item {
+.custom-timeline.ngx-mat-timeline-horizontal.ngx-mat-timeline-start .ngx-mat-timeline-item {
   ::ng-deep .ngx-mat-timeline-item-content {
     &:before {
       top: -15px;
@@ -178,7 +178,7 @@
   }
 }
 
-.custom-timeline.ngx-mat-timeline--horizontal.ngx-mat-timeline--center .ngx-mat-timeline-item {
+.custom-timeline.ngx-mat-timeline-horizontal.ngx-mat-timeline-center .ngx-mat-timeline-item {
   &:nth-child(2n) {
     ::ng-deep .ngx-mat-timeline-item-content {
       &:before {
@@ -195,7 +195,7 @@
   }
 }
 
-.custom-timeline.ngx-mat-timeline--horizontal.ngx-mat-timeline--center-alt .ngx-mat-timeline-item {
+.custom-timeline.ngx-mat-timeline-horizontal.ngx-mat-timeline-center-alt .ngx-mat-timeline-item {
   &:nth-child(2n+1) {
     ::ng-deep .ngx-mat-timeline-item-content {
       &:before {
@@ -213,7 +213,7 @@
   }
 }
 
-.custom-timeline.ngx-mat-timeline--horizontal.ngx-mat-timeline--end .ngx-mat-timeline-item {
+.custom-timeline.ngx-mat-timeline-horizontal.ngx-mat-timeline-end .ngx-mat-timeline-item {
   ::ng-deep .ngx-mat-timeline-item-content {
     &:before {
       bottom: -15px;
