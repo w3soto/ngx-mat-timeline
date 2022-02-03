@@ -4,7 +4,7 @@ Timeline component for Angular Material
 
 [StackBlitz Demo](https://stackblitz.com/edit/angular-ivy-xzfky8)
 
-[GitHub](https://github.com/w3soto/ngx-mat-timeline)
+[GitHub](https://github.com/w3soto/ngx-mat-timeline#readme)
 
 [NPM](https://www.npmjs.com/package/ngx-mat-timeline)
 
