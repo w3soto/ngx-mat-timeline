@@ -4,6 +4,8 @@
   padding: 0;
   width: 100%;
   display: flex;
+  justify-content: stretch;
+  align-items: stretch;
   overflow: auto;
 
   &-content {
@@ -11,30 +13,29 @@
     padding: 0;
     width: 100%;
     display: flex;
-    justify-content: flex-start;
+    justify-content: stretch;
     align-items: stretch;
     min-width: min-content;
     min-height: min-content;
   }
 
-  &--vertical > &-content {
-    flex-direction: column;
-  }
-
-  &--horizontal > &-content {
-    flex-direction: row;
-  }
-
-  &--center > &-content,
-  &--center-alt > &-content {
-    align-items: center;
-  }
 }
 
-.ngx-mat-timeline--vertical.ngx-mat-timeline--reverse > .ngx-mat-timeline-content {
+.ngx-mat-timeline-center > .ngx-mat-timeline-content,
+.ngx-mat-timeline-center-alt > .ngx-mat-timeline-content {
+  align-items: center;
+}
+
+.ngx-mat-timeline-vertical > .ngx-mat-timeline-content {
+  flex-direction: column;
+}
+.ngx-mat-timeline-vertical.ngx-mat-timeline-reverse > .ngx-mat-timeline-content {
   flex-direction: column-reverse;
 }
 
-.ngx-mat-timeline--horizontal.ngx-mat-timeline--reverse > .ngx-mat-timeline-content {
+.ngx-mat-timeline-horizontal > .ngx-mat-timeline-content {
+  flex-direction: row;
+}
+.ngx-mat-timeline-horizontal.ngx-mat-timeline-reverse > .ngx-mat-timeline-content {
   flex-direction: row-reverse;
 }

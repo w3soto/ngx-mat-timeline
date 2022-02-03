@@ -54,43 +54,43 @@ export class NgxMatTimeline implements OnInit, OnDestroy {
   }
   _reverse: boolean = false;
 
-  @HostBinding('class.ngx-mat-timeline--start')
+  @HostBinding('class.ngx-mat-timeline-start')
   get isStartPosition(): boolean {
     return this._position == 'start';
   }
 
-  @HostBinding('class.ngx-mat-timeline--end')
+  @HostBinding('class.ngx-mat-timeline-end')
   get isEndPosition(): boolean {
     return this._position == 'end';
   }
 
-  @HostBinding('class.ngx-mat-timeline--center')
+  @HostBinding('class.ngx-mat-timeline-center')
   get isCenterPosition(): boolean {
     return this._position == 'center';
   }
 
-  @HostBinding('class.ngx-mat-timeline--center-alt')
+  @HostBinding('class.ngx-mat-timeline-center-alt')
   get isCenterAltPosition(): boolean {
     return this._position == 'center-alt';
   }
 
-  @HostBinding('class.ngx-mat-timeline--vertical')
+  @HostBinding('class.ngx-mat-timeline-vertical')
   get isVerticalOrientation(): boolean {
     return this._orientation == 'vertical';
   }
 
-  @HostBinding('class.ngx-mat-timeline--horizontal')
+  @HostBinding('class.ngx-mat-timeline-horizontal')
   get isHorizontalOrientation(): boolean {
     return this._orientation == 'horizontal';
   }
 
-  @HostBinding('class.ngx-mat-timeline--reverse')
+  @HostBinding('class.ngx-mat-timeline-reverse')
   get isReverse(): boolean {
     return this._reverse;
   }
 
   @ContentChildren(NgxMatTimelineItem)
-  items: QueryList<NgxMatTimelineItem> = new QueryList();
+  readonly items: QueryList<NgxMatTimelineItem> = new QueryList();
 
   private _destroyed: Subject<void> = new Subject();
 
@@ -108,7 +108,7 @@ export class NgxMatTimeline implements OnInit, OnDestroy {
         ro.disconnect();
       }
     }).pipe(
-      throttleTime(20),
+      throttleTime(10),
       tap(() => this.updateLayout()),
       takeUntil(this._destroyed)
     ).subscribe();

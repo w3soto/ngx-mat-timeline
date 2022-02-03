@@ -56,8 +56,7 @@ $item-timeline-line-color: #0000001f;
 ///////////////////////////////////////////////////////////////////////////////
 // VERTICAL LAYOUT
 ///////////////////////////////////////////////////////////////////////////////
-.ngx-mat-timeline--vertical > .ngx-mat-timeline-content .ngx-mat-timeline-item {
-  flex-direction: row;
+.ngx-mat-timeline-vertical > .ngx-mat-timeline-content .ngx-mat-timeline-item {
   justify-content: flex-start;
   align-items: stretch;
   &:not(:last-child) {
@@ -86,7 +85,7 @@ $item-timeline-line-color: #0000001f;
 }
 
 // VERTICAL + REVERSE
-.ngx-mat-timeline--vertical.ngx-mat-timeline--reverse > .ngx-mat-timeline-content .ngx-mat-timeline-item {
+.ngx-mat-timeline-vertical.ngx-mat-timeline-reverse > .ngx-mat-timeline-content .ngx-mat-timeline-item {
   &:last-child {
     margin-bottom: $item-timeline-box-gap;
     .ngx-mat-timeline-item-line {
@@ -109,7 +108,7 @@ $item-timeline-line-color: #0000001f;
 }
 
 // VERTICAL + START
-.ngx-mat-timeline--vertical.ngx-mat-timeline--start > .ngx-mat-timeline-content .ngx-mat-timeline-item {
+.ngx-mat-timeline-vertical.ngx-mat-timeline-start > .ngx-mat-timeline-content .ngx-mat-timeline-item {
   flex-direction: row;
   .ngx-mat-timeline-item-fill {
     display: none;
@@ -123,7 +122,7 @@ $item-timeline-line-color: #0000001f;
 }
 
 // VERTICAL + CENTER
-.ngx-mat-timeline--vertical.ngx-mat-timeline--center > .ngx-mat-timeline-content .ngx-mat-timeline-item {
+.ngx-mat-timeline-vertical.ngx-mat-timeline-center > .ngx-mat-timeline-content .ngx-mat-timeline-item {
   &:nth-child(2n - 1) {
     flex-direction: row;
     .ngx-mat-timeline-item-content {
@@ -145,7 +144,7 @@ $item-timeline-line-color: #0000001f;
 }
 
 // VERTICAL + CENTER-ALT
-.ngx-mat-timeline--vertical.ngx-mat-timeline--center-alt > .ngx-mat-timeline-content .ngx-mat-timeline-item {
+.ngx-mat-timeline-vertical.ngx-mat-timeline-center-alt > .ngx-mat-timeline-content .ngx-mat-timeline-item {
   &:nth-child(2n) {
     flex-direction: row;
     .ngx-mat-timeline-item-content {
@@ -167,7 +166,7 @@ $item-timeline-line-color: #0000001f;
 }
 
 // VERTICAL + END
-.ngx-mat-timeline--vertical.ngx-mat-timeline--end > .ngx-mat-timeline-content .ngx-mat-timeline-item {
+.ngx-mat-timeline-vertical.ngx-mat-timeline-end > .ngx-mat-timeline-content .ngx-mat-timeline-item {
   flex-direction: row-reverse;
   .ngx-mat-timeline-item-fill {
     display: none;
@@ -183,11 +182,9 @@ $item-timeline-line-color: #0000001f;
 ///////////////////////////////////////////////////////////////////////////////
 // HORIZONTAL LAYOUT
 ///////////////////////////////////////////////////////////////////////////////
-.ngx-mat-timeline--horizontal .ngx-mat-timeline-content > .ngx-mat-timeline-item {
-  flex-direction: column;
+.ngx-mat-timeline-horizontal .ngx-mat-timeline-content > .ngx-mat-timeline-item {
   justify-content: flex-start;
   align-items: stretch;
-
   &:not(:last-child) {
     margin-right: $item-timeline-box-gap;
     .ngx-mat-timeline-item-fill,
@@ -214,7 +211,7 @@ $item-timeline-line-color: #0000001f;
 }
 
 // HORIZONTAL + REVERSE
-.ngx-mat-timeline--horizontal.ngx-mat-timeline--reverse > .ngx-mat-timeline-content .ngx-mat-timeline-item {
+.ngx-mat-timeline-horizontal.ngx-mat-timeline-reverse > .ngx-mat-timeline-content .ngx-mat-timeline-item {
   &:last-child {
     margin-right: $item-timeline-box-gap;
     .ngx-mat-timeline-item-line {
@@ -237,17 +234,17 @@ $item-timeline-line-color: #0000001f;
 }
 
 // HORIZONTAL + START
-.ngx-mat-timeline--horizontal.ngx-mat-timeline--start > .ngx-mat-timeline-content .ngx-mat-timeline-item {
+.ngx-mat-timeline-horizontal.ngx-mat-timeline-start > .ngx-mat-timeline-content .ngx-mat-timeline-item {
+  flex-direction: column;
   .ngx-mat-timeline-item-fill {
     display: none;
   }
 }
 
 // HORIZONTAL + CENTER
-.ngx-mat-timeline--horizontal.ngx-mat-timeline--center > .ngx-mat-timeline-content .ngx-mat-timeline-item {
+.ngx-mat-timeline-horizontal.ngx-mat-timeline-center > .ngx-mat-timeline-content .ngx-mat-timeline-item {
   &:nth-child(2n - 1) {
     flex-direction: column;
-    justify-content: flex-start;
     .ngx-mat-timeline-item-content {
       display: flex;
       justify-content: flex-start;
@@ -264,12 +261,10 @@ $item-timeline-line-color: #0000001f;
   }
 }
 
-
 // HORIZONTAL + CENTER-ALT
-.ngx-mat-timeline--horizontal.ngx-mat-timeline--center-alt > .ngx-mat-timeline-content .ngx-mat-timeline-item {
+.ngx-mat-timeline-horizontal.ngx-mat-timeline-center-alt > .ngx-mat-timeline-content .ngx-mat-timeline-item {
   &:nth-child(2n) {
     flex-direction: column;
-    justify-content: flex-start;
     .ngx-mat-timeline-item-content {
       display: flex;
       justify-content: flex-start;
@@ -287,9 +282,8 @@ $item-timeline-line-color: #0000001f;
 }
 
 // HORIZONTAL + END
-.ngx-mat-timeline--horizontal.ngx-mat-timeline--end > .ngx-mat-timeline-content .ngx-mat-timeline-item {
+.ngx-mat-timeline-horizontal.ngx-mat-timeline-end > .ngx-mat-timeline-content .ngx-mat-timeline-item {
   flex-direction: column-reverse;
-  justify-content: flex-end;
   .ngx-mat-timeline-item-content {
     display: flex;
     justify-content: flex-start;
