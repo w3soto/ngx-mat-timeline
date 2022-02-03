@@ -111,6 +111,6 @@ Note: If multiple icons are defined, only first one is displayed (*icon* or *svg
 
 Use with *ng-template*.
 
-* **ngxMatTimelineItemIcon** or **ngx-mat-timeline-item-icon**
+* **ngxMatTimelineItemIcon**
 
-* **ngxMatTimelineItemLabel** or **ngx-mat-timeline-item-label**
+* **ngxMatTimelineItemLabel**
