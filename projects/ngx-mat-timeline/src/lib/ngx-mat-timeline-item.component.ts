@@ -12,14 +12,14 @@ import {
 
 
 @Directive({
-  selector: 'ngx-mat-timeline-item-icon, [ngxMatTimelineItemIcon]',
+  selector: 'ng-template[ngxMatTimelineItemIcon]',
 })
 export class NgxMatTimelineItemIcon {
 }
 
 
 @Directive({
-  selector: 'ngx-mat-timeline-item-label, [ngxMatTimelineItemLabel]',
+  selector: 'ng-template[ngxMatTimelineItemLabel]',
 })
 export class NgxMatTimelineItemLabel {
 }
