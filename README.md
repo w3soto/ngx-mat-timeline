@@ -2,11 +2,11 @@
 
 Timeline component for Angular Material
 
+[![w3soto](https://circleci.com/gh/w3soto/ngx-mat-timeline.svg?style=svg)](https://circleci.com/gh/w3soto/ngx-mat-timeline)
+
 [StackBlitz Demo](https://stackblitz.com/edit/angular-ivy-xzfky8)
 
-[GitHub](https://github.com/w3soto/ngx-mat-timeline#readme)
-
-[NPM](https://www.npmjs.com/package/ngx-mat-timeline)
+![Screenshot](https://raw.githubusercontent.com/w3soto/ngx-mat-timeline/master/readme/basic-example.png "Screenshot")
 
 ## Features
 * Vertical and Horizontal orientation
@@ -14,8 +14,6 @@ Timeline component for Angular Material
 * Reversed direction
 * Support for Google Material Icons (including SVG) and images
 * Custom icon and label directives  
-
-![Screenshot](https://raw.githubusercontent.com/w3soto/ngx-mat-timeline/master/readme/basic-example.png "Screenshot")
 
 ## Installation
 ```shell
