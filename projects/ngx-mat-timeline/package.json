@@ -1,6 +1,6 @@
 {
   "name": "ngx-mat-timeline",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "license": "MIT",
   "homepage": "https://github.com/w3soto/ngx-mat-timeline#readme",
   "keywords": ["angular", "material", "timeline"],
