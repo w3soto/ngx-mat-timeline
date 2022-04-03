@@ -4,15 +4,15 @@ import {
   ContentChildren,
   ElementRef,
   HostBinding,
-  Input,
+  Input, NgZone, OnChanges,
   OnDestroy,
   OnInit,
-  QueryList,
+  QueryList, SimpleChanges,
   ViewEncapsulation
 } from '@angular/core';
 import { NgxMatTimelineItem } from "./ngx-mat-timeline-item.component";
 import { Observable, Subject } from "rxjs";
-import { takeUntil, tap, throttleTime } from "rxjs/operators";
+import { first, takeUntil, tap, throttleTime } from "rxjs/operators";
 
 
 export type NGX_MAT_TIMELINE_POSITION = 'start' | 'end' | 'center' | 'center-alt';
@@ -31,7 +31,7 @@ export type NGX_MAT_TIMELINE_ORIENTATION = 'vertical' | 'horizontal';
     'class': 'ngx-mat-timeline'
   }
 })
-export class NgxMatTimeline implements OnInit, OnDestroy {
+export class NgxMatTimeline implements OnInit, OnDestroy, OnChanges {
 
   @Input()
   set position(position: NGX_MAT_TIMELINE_POSITION) {
@@ -95,8 +95,16 @@ export class NgxMatTimeline implements OnInit, OnDestroy {
   private _destroyed: Subject<void> = new Subject();
 
   constructor(
-    private _host: ElementRef
+    private _host: ElementRef,
+    private _ngZone: NgZone
   ) {}
+
+  ngOnChanges(changes: SimpleChanges): void {
+    this._ngZone.onStable.pipe(
+      tap(() => this.updateLayout()),
+      first()
+    ).subscribe();
+  }
 
   ngOnInit() {
     new Observable(observer => {
